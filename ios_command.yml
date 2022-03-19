@@ -3,8 +3,8 @@
   hosts: R1
   gather_facts: false
   connection: network_cli
-  collections:
-    - cisco.ios
+  #collections:
+  #  - cisco.ios
 
   tasks:
     - name: run multiple commands on remote nodes
