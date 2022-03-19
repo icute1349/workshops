@@ -1,0 +1,19 @@
+---
+- name: show version and other user level commands
+  hosts: R1
+  gather_facts: false
+  connection: network_cli
+  collections:
+    - cisco.ios
+
+  tasks:
+    - name: run multiple commands on remote nodes
+      ios_command:
+        commands:
+          - show version
+          - show ip int brief
+
+
+      register: print_output
+
+    -  debug: var=print_output.stdout_lines
